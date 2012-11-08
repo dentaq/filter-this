@@ -1,6 +1,6 @@
 Filter This
 ======================
-A browser action with a popup that changes the page hue-rotate of color.
+A browser action with a popup that changes the page hue-rotate of color(Google Chrome extension).
 
 Usage
 ------
