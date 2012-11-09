@@ -4,20 +4,19 @@
 
 
 function change(e) {
-  var val = [0, 0, 0];
   switch(e.target.id) {
     case "hue":
-      val[0] = e.target.value;
+      window.localStorage.setItem("hue", e.target.value);
       break;
     case "gray":
-      val[1] = e.target.value;
+      window.localStorage.setItem("gray", e.target.value);
       break;
     case "sepia":
-      val[2] = e.target.value;
+      window.localStorage.setItem("sepia", e.target.value);
       break;
   }
   chrome.tabs.executeScript(null,
-      {code:"document.body.style.webkitFilter='hue-rotate("+val[0]+"deg) grayscale("+val[1]+"%) sepia("+val[2]+"%)'"});
+      {code:"document.body.style.webkitFilter='hue-rotate("+localStorage.getItem("hue")+"deg) grayscale("+localStorage.getItem("gray")+"%) sepia("+localStorage.getItem("sepia")+"%)'"});
 }
 
 document.addEventListener('DOMContentLoaded', function () {
