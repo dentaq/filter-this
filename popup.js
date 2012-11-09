@@ -4,11 +4,26 @@
 
 
 function change(e) {
+  var val = [0, 0, 0];
+  switch(e.target.id) {
+    case "hue":
+      val[0] = e.target.value;
+      break;
+    case "gray":
+      val[1] = e.target.value;
+      break;
+    case "sepia":
+      val[2] = e.target.value;
+      break;
+  }
   chrome.tabs.executeScript(null,
-      {code:"document.body.style.webkitFilter='hue-rotate("+e.target.value+"deg)'"});
+      {code:"document.body.style.webkitFilter='hue-rotate("+val[0]+"deg) grayscale("+val[1]+"%) sepia("+val[2]+"%)'"});
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  var hue = document.getElementById('hue');
-  hue.addEventListener('change', change);
+  var input = document.getElementsByTagName('input');
+  len = input.length;
+  for(var i = 0; i < len; i++){
+    input[i].addEventListener('change', change);
+  }
 });
