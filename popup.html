@@ -10,9 +10,30 @@
       background: white;
     }
 
+    h1 {
+      font-size: 8pt;
+      margin: 1px;
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #ffffff;
+      padding: 2px;
+      background: -webkit-gradient(
+        linear, left top, left bottom,
+        from(#abd647),
+        color-stop(0.25, #7fb500),to(#c3df5e));
+      border: 1px solid #89ad34;
+      -webkit-box-shadow: 0px 1px 3px rgba(000,000,000,0.5),
+        inset 0px -1px 0px rgba(218,255,133,0.7);
+      box-shadow: 0px 1px 3px rgba(000,000,000,0.5),
+        inset 0px -1px 0px rgba(218,255,133,0.7);
+      text-shadow: 0px -1px 1px rgba(000,000,000,0.3),
+        0px 1px 0px rgba(255,255,255,0.2);
+    }
+
     dl {
       font-family: sans-serif;
-      font-size: 0.8em;
+      font-weight: bold;
+      font-size: 0.7em;
       width: 140px;
       margin: 1px 0 0;
     }
@@ -25,6 +46,7 @@
     <script src="popup.js"></script>
   </head>
   <body>
+    <h1>Filter Shop</h1>
     <dl>
       <dt>hue-rotate (<span></span>deg)</dt>
       <dd>
