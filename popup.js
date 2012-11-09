@@ -4,17 +4,7 @@
 
 
 function change(e) {
-  switch(e.target.id) {
-    case "hue":
-      window.localStorage.setItem("hue", e.target.value);
-      break;
-    case "gray":
-      window.localStorage.setItem("gray", e.target.value);
-      break;
-    case "sepia":
-      window.localStorage.setItem("sepia", e.target.value);
-      break;
-  }
+  window.localStorage.setItem(e.target.id, e.target.value);
   chrome.tabs.executeScript(null,
       {code:"document.body.style.webkitFilter='hue-rotate("+localStorage.getItem("hue")+"deg) grayscale("+localStorage.getItem("gray")+"%) sepia("+localStorage.getItem("sepia")+"%)'"});
 }
