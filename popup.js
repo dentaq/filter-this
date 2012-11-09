@@ -5,6 +5,10 @@
 
 function change(e) {
   window.localStorage.setItem(e.target.id, e.target.value);
+  var span = document.getElementsByTagName('span');
+  span[0].innerHTML = localStorage.getItem("hue");
+  span[1].innerHTML = localStorage.getItem("gray");
+  span[2].innerHTML = localStorage.getItem("sepia");
   chrome.tabs.executeScript(null,
       {code:"document.body.style.webkitFilter='hue-rotate("+localStorage.getItem("hue")+"deg) grayscale("+localStorage.getItem("gray")+"%) sepia("+localStorage.getItem("sepia")+"%)'"});
 }
